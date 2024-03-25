@@ -1,4 +1,5 @@
 package vehiculos;
+import java.util.ArrayList;
 
 public class Vehiculo {
 	
@@ -11,6 +12,7 @@ public class Vehiculo {
 	protected String traccion;
 	private Fabricante fabricante;
 	private static int cantidadVehiculos;
+	protected static ArrayList <Fabricante> lista = new ArrayList<>(); 
 	
 	public Vehiculo(String placa, int puertas, int velocidadMaxima, String nombre, int precio, int peso, String traccion, Fabricante fabricante) {
 		
@@ -23,7 +25,17 @@ public class Vehiculo {
 		this.traccion = traccion;
 		this.fabricante = fabricante;
 		Vehiculo.cantidadVehiculos++;
+		Fabricante.list.add(this);
 		
+		if (lista.contains(fabricante)) {
+			
+			
+		}
+		
+		else {
+			Vehiculo.lista.add(fabricante);
+		}
+			
 	}
 	
 	public void setPlaca(String placa) {
